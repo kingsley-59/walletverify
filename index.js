@@ -77,67 +77,67 @@ const walletData = [
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'Math Wallet',
         pathToLogo: './images/icons/math_wallet.png'
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'Metamask',
         pathToLogo: './images/icons/metamask.png'
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'Mobox',
         pathToLogo: './images/icons/mobox.png'
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'MyKey',
         pathToLogo: './images/icons/mykey.png'
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'Onto',
         pathToLogo: './images/icons/onto.png'
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'Pillar',
         pathToLogo: './images/icons/pillar.png'
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'Rainbow',
         pathToLogo: './images/icons/rainbow.png'
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'Ronin',
         pathToLogo: './images/icons/ronin.png'
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'TokenPocket',
         pathToLogo: './images/icons/tokenpocket.png'
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'Trezor',
         pathToLogo: './images/icons/trezor.png'
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'Trust',
         pathToLogo: './images/icons/trust.png'
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'Trust Vault',
         pathToLogo: './images/icons/trustvault.png'
     },
     {
         id: '',
-        name: 'Argent',
+        name: 'Walleth',
         pathToLogo: './images/icons/walleth.png'
     }
 ]
@@ -145,12 +145,12 @@ const walletData = [
 const Navigation = () => {
     return (
         <>
-        <Navbar collapseOnSelect sticky='top' expand='sm' bg='light' variant='light'>
+        <Navbar collapseOnSelect expand='sm' bg='light' variant='light'>
             <Container>
                 <Row className="text-dark container-fluid p-4">
-                    <Col className="text-center my-auto" xs={4}><strong>Home</strong></Col>
-                    <Col className="text-center" xs={4}><img src='/images/logos/favicon.ico' width='50%' alt="logo" /></Col>
-                    <Col className="text-center my-auto" xs={4}><strong>Charts</strong></Col>
+                    <Col className="text-center my-auto py-3 nav-option" xs={4}><strong>Home</strong></Col>
+                    <Col className="text-center" xs={4}><img src='/images/logos/favicon.ico' width='40%' alt="logo" /></Col>
+                    <Col className="text-center my-auto py-3 nav-option" xs={4}><strong>Charts</strong></Col>
                 </Row>
             </Container>
         </Navbar>
@@ -172,31 +172,6 @@ const Banner = () => {
                 Aliquam minus sit magni ab magnam nesciunt, ea iusto placeat?
             </p>
         </Container>
-    )
-}
-
-const ModalForm = () => {
-    return (
-        <Form>
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>
     )
 }
 
@@ -349,8 +324,8 @@ class Mains extends Component {
 
     walletList = walletData.map(({name, pathToLogo}) => (
         <Col xs={6} sm={4} md={3} className="p-3 text-center">
-            <img src={pathToLogo} width='70%' onClick={() => {this.handleShow({name, pathToLogo})}} alt=""/>
-            <div className="text-center">{name}</div>
+            <img src={pathToLogo} width='59%' className="mb-3 cursor-pointer" onClick={() => {this.handleShow({name, pathToLogo})}} alt=""/>
+            <div className="text-center cursor-pointer">{name}</div>
         </Col>
     ));
 
