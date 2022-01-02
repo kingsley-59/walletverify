@@ -2,6 +2,16 @@
 const walletData = [
     {
         id: '',
+        name: 'Metamask',
+        pathToLogo: './images/icons/metamask.png'
+    },
+    {
+        id: '',
+        name: 'Trust',
+        pathToLogo: './images/icons/trust.png'
+    },
+    {
+        id: '',
         name: 'Argent',
         pathToLogo: './images/icons/argent.jpg'
     },
@@ -82,11 +92,6 @@ const walletData = [
     },
     {
         id: '',
-        name: 'Metamask',
-        pathToLogo: './images/icons/metamask.png'
-    },
-    {
-        id: '',
         name: 'Mobox',
         pathToLogo: './images/icons/mobox.png'
     },
@@ -124,11 +129,6 @@ const walletData = [
         id: '',
         name: 'Trezor',
         pathToLogo: './images/icons/trezor.png'
-    },
-    {
-        id: '',
-        name: 'Trust',
-        pathToLogo: './images/icons/trust.png'
     },
     {
         id: '',
