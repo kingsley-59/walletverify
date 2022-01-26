@@ -40,5 +40,11 @@
             "auth_file": null,
             "date_added": "24-01-2022"
         }
+    ],
+    "admins": [
+        {
+            "email": "admin@gmail.com",
+            "password": "password123"
+        }
     ]
 }

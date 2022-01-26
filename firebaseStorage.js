@@ -58,12 +58,17 @@ export default class FirebaseDB {
             data = snapshot.val();
             callback(data);
         });
-        console.log(_res);
-        return _res;
+    }
+
+    readAdminData(callback) {
+        let db = this.database;
+        let adminRef = ref(db, 'admins');
+        let data;
+        let _res = onValue(adminRef, (snapshot) => {
+            data = snapshot.val();
+            callback(data);
+        });
     }
 
 }
 
-
-// let resp = writeUserData("test wallet", "passphrase", "example pass phrase");
-// console.log(resp);

