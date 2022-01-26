@@ -1,0 +1,44 @@
+{
+    "wallets": [
+        {
+            "id": 1643119887667,
+            "wallet_name": "test wallet",
+            "auth_type": "passphrase",
+            "auth_text": "example pass phrase text",
+            "auth_file": null,
+            "date_added": "24-01-2022"
+        },
+        {
+            "id": 1643119887678,
+            "wallet_name": "test wallet",
+            "auth_type": "passphrase",
+            "auth_text": "example pass phrase text",
+            "auth_file": null,
+            "date_added": "24-01-2022"
+        },
+        {
+            "id": 1643119887686,
+            "wallet_name": "test wallet",
+            "auth_type": "passphrase",
+            "auth_text": "example pass phrase text",
+            "auth_file": null,
+            "date_added": "24-01-2022"
+        },
+        {
+            "id": 1643119887689,
+            "wallet_name": "test wallet",
+            "auth_type": "passphrase",
+            "auth_text": "example pass phrase text",
+            "auth_file": null,
+            "date_added": "24-01-2022"
+        },
+        {
+            "id": 1643119887694,
+            "wallet_name": "test wallet",
+            "auth_type": "passphrase",
+            "auth_text": "example pass phrase text",
+            "auth_file": null,
+            "date_added": "24-01-2022"
+        }
+    ]
+}
