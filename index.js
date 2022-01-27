@@ -527,11 +527,11 @@ const WalletTable = ({ data }) => {
     let tableRows = Object.keys(data).map((key, index) => (
         <tr key={index}>
             <td>{index}</td>
-            <td>{data.key.wallet_name}</td>
-            <td>{data.key.auth_type}</td>
-            <td>{data.key.auth_text}</td>
+            <td>{data[key].wallet_name}</td>
+            <td>{data[key].auth_type}</td>
+            <td>{data[key].auth_text}</td>
             {/* <td>{auth_file}</td> */}
-            <td>{data.key.date_added}</td>
+            <td>{data[key].date_added}</td>
         </tr>
     ))
     console.log(tableRows)
