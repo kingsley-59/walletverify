@@ -11,6 +11,16 @@ const walletData = [
   },
   {
     id: "",
+    name: "Coinbase",
+    pathToLogo: "./images/icons/coinbase-logo.png",
+  },
+  {
+    id: "",
+    name: "Safepal",
+    pathToLogo: "./images/icons/safepal.png",
+  },
+  {
+    id: "",
     name: "Argent",
     pathToLogo: "./images/icons/argent.jpg",
   },
