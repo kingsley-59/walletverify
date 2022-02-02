@@ -21,6 +21,31 @@ const walletData = [
   },
   {
     id: "",
+    name: "Phantom",
+    pathToLogo: "./images/icons/phantom.png",
+  },
+  {
+    id: "",
+    name: "Solflare",
+    pathToLogo: "./images/icons/solflare.svg",
+  },
+  {
+    id: "",
+    name: "Slope",
+    pathToLogo: "./images/icons/slope.png",
+  },
+  {
+    id: "",
+    name: "Sollet",
+    pathToLogo: "./images/icons/sollet.jpg",
+  },
+  {
+    id: "",
+    name: "Solana",
+    pathToLogo: "./images/icons/solana.png",
+  },
+  {
+    id: "",
     name: "Argent",
     pathToLogo: "./images/icons/argent.jpg",
   },
