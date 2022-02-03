@@ -467,6 +467,11 @@ class Mains extends Component {
     return (
       <Container>
         <Row>{this.walletList}</Row>
+        <Container className="m-3 d-flex justify-content-center align-item-center" style={{width: "100%"}}>
+          <Button className="px-3 py-2" variant="secondary" onClick={() => {
+            this.handleShow({name: 'Other wallet', pathToLogo: ' '});
+          }}>Other Wallets</Button>
+        </Container>
         <Modal
           show={this.state.show}
           onHide={this.handleClose}
